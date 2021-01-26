@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/img/favicon.png}">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sermões</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+	crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<style type="text/css">
+body {
+background: #2962FF;
+	font-family: Arial, Helvetica, sans-serif
+}
+
+.card-heading, .card-subheading {
+	font-weight: bold
+}
+
+.card {
+	width: 450px;
+	height: 450px;
+	border: none;
+	border-radius: 10px
+}
+
+.form-control {
+	border: none;
+	border-radius: 10px
+}
+
+.fone {
+	padding-left: 30px
+}
+
+.form-control {
+	background-color: #eee !important
+}
+
+.form-control:focus {
+	color: #495057;
+	border-color: #fff !important;
+	outline: 0;
+	box-shadow: 0 0 0 0 rgba(0, 123, 255, .25) !important
+}
+
+.fone input {
+	width: 120%;
+	background: rgba(165, 147, 69, 0.075)
+}
+
+.ftwo input {
+	width: 120%;
+	background: rgba(165, 147, 69, 0.075)
+}
+
+.fthree {
+	padding-left: 30px;
+	padding-right: 45px
+}
+
+.fthree input {
+	background-color: rgba(165, 147, 69, 0.075)
+}
+
+.ffour {
+	padding-left: 30px
+}
+
+.ffour input {
+	width: 120%;
+	background-color: rgba(165, 147, 69, 0.075)
+}
+
+.ffive input {
+	width: 120%;
+	background-color: rgba(165, 147, 69, 0.075)
+}
+
+.rthree {
+	padding-top: 1px
+}
+
+.para1 {
+	height: 10px;
+	font-size: 12px
+}
+
+.para2 {
+	font-size: 12px
+}
+
+.btn-primary {
+	border-radius: 8px;
+	background: #2979FF;
+	width: 120px
+}
+
+.btn-primary span {
+	font-size: 15px
+}
+
+@media screen and (max-width: 768px) {
+	.fone input {
+		width: 90%
+	}
+	.ftwo input {
+		width: 86%
+	}
+	.fthree {
+		width: 110%
+	}
+	.ffour input {
+		width: 90%
+	}
+	.ffive input {
+		width: 86%
+	}
+}
+</style>
+
+</head>
+<body>
+
+	<div class="container d-flex justify-content-center">
+		<div class="card mx-5 my-5">
+			<div class="card-body px-2 ">
+				<h2 class="card-heading text-center">Login</h2>
+				<h5 class="card-subheading pb-3 text-center">Sermão expositivo</h5>
+				<form th:action="@{/login}" method="post">
+					<div class="row">
+						<div class="form-group px-3 col-12 ">
+							<input type="text" class="form-control" name="username" placeholder="usuário" maxlength="50">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group px-3 col-12 ">
+							<input type="password" class="form-control" name="password" placeholder="Senha" maxlength="50">
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-4">
+							<button type="submit" class="btn btn-primary btn-sm mt-3">
+								<span>Entrar</span>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

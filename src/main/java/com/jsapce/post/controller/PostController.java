@@ -29,6 +29,11 @@ public class PostController {
 		return "redirect:/posts";
 	}
 	
+	@GetMapping("/login")
+	public String login() {
+		return "/login";
+	}
+	
 	@GetMapping("/posts")
 	public ModelAndView getPosts() {
 		ModelAndView mv = new ModelAndView("posts");
