@@ -29,12 +29,15 @@
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 </head>
 <body>
-	<header >
+	<header>
 		<nav class="navbar navbar-light bg-light mt-2 container-fluid">
 			<div class="container">
-				<span class="navbar-brand mb-0 h1" style="font-weight: bold;">Sermão Expositivo</span> 
-				<a href="/new" class="btn btn-primary btn-sm justify-content-end" role="button">Novo
-					Post</a>
+				<a class="navbar-brand" href="/posts"> <img
+					th:src="@{/img/favicon.png}" width="30" height="30"
+					class="d-inline-block align-top" alt=""> <span
+					class="navbar-brand mb-0 h1" style="font-weight: bold;">Home</span>
+				</a> <a href="/new" class="btn btn-info btn-sm justify-content-end"
+					role="button">Novo Post</a>
 			</div>
 		</nav>
 	</header>
@@ -48,7 +51,6 @@
 						href="/posts">Posts</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Novo
 						Post</li>
-				</ol>
 				</ol>
 			</nav>
 

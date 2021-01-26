@@ -19,13 +19,26 @@
 	<header>
 		<nav class="navbar navbar-light bg-light mt-2 container-fluid">
 			<div class="container">
-				<span class="navbar-brand mb-0 h1" style="font-weight: bold;">Sermão Expositivo</span>
+				<a class="navbar-brand" href="/posts"> <img
+					th:src="@{/img/favicon.png}" width="30" height="30"
+					class="d-inline-block align-top" alt=""> <span
+					class="navbar-brand mb-0 h1" style="font-weight: bold;">Home</span>
+				</a> <a href="/new" class="btn btn-info btn-sm justify-content-end"
+					role="button">Novo Post</a>
 			</div>
 		</nav>
 	</header>
 
 	<main>
-		<div class="container">
+	
+		<div class="container text-center">
+			<h1>
+					<span th:text="${post.titulo}"></span>
+				</h1>
+		</div>
+		<hr>
+		
+		<div class="container mt-3">
 
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
@@ -36,14 +49,11 @@
 			</nav>
 
 			<article>
-				<h1 class="card-title">
-					<span th:text="${post.titulo}"></span>
-				</h1>
 
 				<p class="card-subtitle mb-2 text-muted">
 					<i class="material-icons">person_outline</i> <span
 						th:text="${post.autor}"></span> <br> <i
-						class="material-icons">date_range</i> <span th:text="${post.data}"></span>
+						class="material-icons">date_range</i> <span th:text="${#temporals.format(post.data,'EEE d MMM yyyy')}"></span>
 				</p>
 
 				<section>
