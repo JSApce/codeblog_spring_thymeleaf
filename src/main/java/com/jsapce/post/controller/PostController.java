@@ -31,7 +31,7 @@ public class PostController {
 	
 	@GetMapping("/login")
 	public String login() {
-		return "/login";
+		return "loginForm";
 	}
 	
 	@GetMapping("/posts")
