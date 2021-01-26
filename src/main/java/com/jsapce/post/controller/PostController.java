@@ -24,6 +24,11 @@ public class PostController {
 		this.postService = postService;
 	}
 	
+	@GetMapping("/")
+	public String index() {
+		return "redirect:/posts";
+	}
+	
 	@GetMapping("/posts")
 	public ModelAndView getPosts() {
 		ModelAndView mv = new ModelAndView("posts");
