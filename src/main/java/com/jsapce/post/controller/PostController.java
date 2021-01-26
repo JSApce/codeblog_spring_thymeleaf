@@ -8,7 +8,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -16,7 +15,6 @@ import com.jsapce.post.model.Post;
 import com.jsapce.post.service.PostService;
 
 @Controller
-@RequestMapping("/posts")
 public class PostController {
 
 	private PostService postService;
@@ -26,7 +24,7 @@ public class PostController {
 		this.postService = postService;
 	}
 	
-	@GetMapping
+	@GetMapping("/posts")
 	public ModelAndView getPosts() {
 		ModelAndView mv = new ModelAndView("posts");
 		mv.addObject("posts", this.postService.getAll());
@@ -34,7 +32,7 @@ public class PostController {
 	}
 	
 	
-	@GetMapping("/{id}")
+	@GetMapping("/posts/{id}")
 	public ModelAndView getPostDetails(@PathVariable("id") Long id) {
 		
 		ModelAndView mv = new ModelAndView("postDetails");
@@ -53,7 +51,7 @@ public class PostController {
 
 		if(bindResult.hasErrors()) {
 			redirectAttributes.addFlashAttribute("message", "Verifique se os campos obrigatórios estão preenchidos!");
-			return "redirect:/posts/new";
+			return "redirect:/new";
 		}
 		
 		this.postService.save(post);

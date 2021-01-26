@@ -1,49 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<link rel="icon" type="image/png" sizes="16x16" th:href="@{/img/favicon.png}">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>sermões</title>
 
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
+
 </head>
 <body>
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-light mb-3"
-			style="background-color: #e3f2fd;">
+	<header class="container-fluid">
+		<nav class="navbar navbar-light bg-light mt-2">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Sermões</a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-					aria-controls="navbarNavDropdown" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNavDropdown">
-					<ul class="navbar-nav">
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="#">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Features</a>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="#">Pricing</a>
-						</li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
-							id="navbarDropdownMenuLink" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"> Dropdown
-								link </a>
-							<ul class="dropdown-menu"
-								aria-labelledby="navbarDropdownMenuLink">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li><a class="dropdown-item" href="#">Something else
-										here</a></li>
-							</ul></li>
-					</ul>
-				</div>
+				<span class="navbar-brand mb-0 h1" style="font-weight: bold;">Exposição
+					Bíblica</span> <a href="/new" class="btn btn-primary btn-sm" role="button">Novo
+					Post</a>
 			</div>
 		</nav>
 	</header>
@@ -57,15 +31,21 @@
 				</ol>
 			</nav>
 
-			<div class="card shadow-sm bg-white rounded mt-3" th:each="post : ${posts}">
+			<div class="card shadow-sm bg-white rounded mt-3"
+				th:each="post : ${posts}">
 				<div class="card-body">
-					<p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;" >
-						<span th:text="${post.autor}"></span>
-						<span th:text="${post.data}"></span>
+					<p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
+						<span th:text="${post.autor}"></span> <span th:text="${post.data}"></span>
 					</p>
-				
-					<a th:href="${(#mvc.url('PC#getPostDetails').arg(0, post.id)).build()}" ><h4 class="card-title"><span th:text="${post.titulo}"></span></h4></a>
-					<p class="card-text"><span th:utext="${#strings.abbreviate(post.texto, 400)}"></span></p>
+
+					<a
+						th:href="${(#mvc.url('PC#getPostDetails').arg(0, post.id)).build()}"><h4
+							class="card-title">
+							<span th:text="${post.titulo}"></span>
+						</h4></a>
+					<p class="card-text">
+						<span th:utext="${#strings.abbreviate(post.texto, 400)}"></span>
+					</p>
 				</div>
 			</div>
 

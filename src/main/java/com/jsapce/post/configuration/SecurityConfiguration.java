@@ -16,22 +16,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests()
-					.antMatchers(AUTH).permitAll()
-					.anyRequest().authenticated()
-					.and().formLogin().permitAll()
-					.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+		 http.csrf().disable().authorizeRequests()
+         .antMatchers(AUTH).permitAll()
+         .anyRequest().authenticated()
+         .and().formLogin().permitAll()
+         .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 	}
-	
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("jamerson").password("apce").roles("ADMIN")
-			.and().withUser("admin").password("sermoes123").roles("ADMIN")
-			.and().withUser("user").password("sermoes456").roles("MANAGER");
+		auth.inMemoryAuthentication().withUser("jamerson").password("{noop}aapce").roles("ADMIN").and().withUser("admin")
+				.password("{noop}sermoes123").roles("ADMIN").and().withUser("user").password("{noop}sermoes456").roles("MANAGER");
 	}
-	
+
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/bootstrap/**");
+		web.ignoring().antMatchers("/bootstrap/**", "/static/**");
 	}
 }
